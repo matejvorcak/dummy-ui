@@ -3,3 +3,4 @@ package-lock.json
 dist
 webpack.config.js
 .eslintrc.js
+node_modules/**
