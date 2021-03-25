@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "tsc --noEmit && eslint . --ext js,ts,json --quiet --fix",
     "e2e": "ng e2e"
@@ -19,7 +19,6 @@
     "@angular/platform-browser": "~11.2.7",
     "@angular/platform-browser-dynamic": "~11.2.7",
     "@angular/router": "~11.2.7",
-    "@ngneat/tailwind": "^5.2.5",
     "rxjs": "~6.5.4",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
@@ -32,6 +31,7 @@
     "@angular-eslint/template-parser": "^2.0.2",
     "@angular/cli": "~11.2.6",
     "@angular/compiler-cli": "~11.2.7",
+    "@ngneat/tailwind": "^6.0.3",
     "@tailwindcss/forms": "^0.2.1",
     "@tailwindcss/typography": "0.4.0",
     "@types/jasmine": "~3.6.0",
@@ -57,6 +57,7 @@
     "karma-jasmine-html-reporter": "^1.5.0",
     "lint-staged": "^10.5.4",
     "postcss": "8.2.8",
+    "postcss-ng-tailwind-in-components": "0.0.4",
     "prettier": "^2.2.1",
     "prettier-eslint": "^12.0.0",
     "protractor": "~7.0.0",

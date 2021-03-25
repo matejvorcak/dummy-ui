@@ -1,15 +1,30 @@
 <div class="container-wrapper block bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200">
   <div class="app-container container mx-auto min-h-screen">
-    <div class="menu py-2 flex w-full justify-end content-center">
-      <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-        <label class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer">
-          <input [(ngModel)]="isDarkMode" type="checkbox" name="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer focus:outline-none"/>
-        </label>
+    <div class="menu py-2 flex w-full items-center justify-between">
+      <!-- nav -->
+      <nav class="flex space-x-5 items-center">
+        <a routerLink="/" class="flex items-center text-yellow-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" > 
+          APP
+        </a>
+        <a class="hover:text-yellow-400 transition-colors" routerLink="/login">Login</a>
+        <a class="hover:text-yellow-400 transition-colors" routerLink="/">Main</a>
+        <a class="hover:text-yellow-400 transition-colors" routerLink="/page-not-found">404</a>
+        <a class="hover:text-yellow-400 transition-colors flex items-center cursor-pointer" (click)="logout()" *ngIf="user$ | async as user"> 
+          <i class="mdi mdi-login-variant text-xl"></i>
+          {{user.name}}
+        </a>
+      </nav>
+
+      <!-- dark mode toggle -->
+      <div class="flex flex-col items-center space-y-1">
+        <div class="relative inline-block mr-2 align-middle select-none transition duration-200 ease-in">
+          <label class="pl-0.5 justify-between flex items-center w-11 toggle-label overflow-hidden h-6 rounded-full border-gray-300 border-2  cursor-pointer">
+            <i class="mdi mdi-brightness-5 text-yellow-400"></i>
+            <input [ngModel] (ngModelChange)="setDarkModePreferences($event)" type="checkbox" name="toggle" [ngClass]="isDarkMode? 'right-0 border-yellow-400': 'left-0 border-gray-900'" class="toggle-checkbox absolute block w-7 h-7 rounded-full bg-white border-4 appearance-none cursor-pointer focus:outline-none"/>
+            <i class="mdi mdi-brightness-2 text-gray-900"></i>
+          </label>
+        </div>
       </div>
-      <label for="toggle" class="text-xs">Dark mode.</label>
-      
-      <a routerLink="/login">Login</a>
-      <a routerLink="/main">Main</a>
     </div>
   
     
