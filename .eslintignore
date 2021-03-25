@@ -4,3 +4,4 @@ dist
 webpack.config.js
 .eslintrc.js
 node_modules/**
+src/**/*.spec.ts

@@ -1,0 +1,12 @@
+.toggle-checkbox:checked {
+  @apply: right-0 border-green-400;
+};
+
+.toggle-checkbox:checked + .toggle-label {
+  @apply: bg-green-400;
+}
+
+.app-container {
+  display: grid;
+  grid-template-rows: 0fr 0fr 1fr 0fr;
+}
