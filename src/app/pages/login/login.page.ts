@@ -1,12 +1,8 @@
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import {
-  APP_CONSTANTS,
-  AuthService,
-  LocalStorageService,
-  IConstants
-} from '@core';
+import { APP_CONSTANTS, IConstants } from '@core';
+import { AuthService, LocalStorageService } from '@core/services';
 
 @Component({
   templateUrl: './login.page.html',

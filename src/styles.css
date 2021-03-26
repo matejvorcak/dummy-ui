@@ -4,11 +4,24 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);
 /* You can add global styles to this file, and also import other style files */
 
-[form-control] {
+
+form [form-control] {
   @apply w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-yellow-100 focus:border-yellow-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500
 }
 
-[form-error] {
-  @apply text-sm text-red-500;
-};
+form.submitted [form-control].ng-dirty.ng-invalid.ng-touched {
+  @apply border-red-300 focus:ring-red-100 focus:border-red-300
+}
 
+
+[form-error] {
+  @apply text-sm text-red-500
+}
+
+[btn] {
+  @apply disabled:opacity-50 w-full px-3 py-4 text-yellow-500 rounded-md hover:text-yellow-600 border-yellow-500 border-2 hover:border-yellow-600 focus:outline-none  transition-colors
+}
+
+[btn-primary] {
+  @apply disabled:opacity-50 w-full px-3 py-4 text-white bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none  transition-colors
+} 

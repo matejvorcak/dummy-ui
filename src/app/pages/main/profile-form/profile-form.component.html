@@ -1,0 +1,59 @@
+<p class="text-yellow-500">Profile Form Component</p>
+<form class="mb-6" [ngClass]="{'submitted': formSubmitted }" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <div class="mb-6">
+      <label for="name" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Name</label>
+      <input form-control type="name" formControlName="name" placeholder="Your Name"/>
+      <ng-container *ngIf="formSubmitted && profileForm.controls.name.touched && profileForm.controls.name.invalid">
+        <span form-error *ngIf="profileForm.controls.name.errors?.required">
+          Name is required.
+        </span>
+      </ng-container>
+  </div>
+  <div class="mb-6">
+    <label for="email" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Email</label>
+    <input form-control type="email" formControlName="email" placeholder="Your Email"/>
+    <ng-container *ngIf="formSubmitted && profileForm.controls.email.touched && profileForm.controls.email.invalid">
+      <span form-error *ngIf="profileForm.controls.email.errors?.required">Email is required.</span>
+      <span form-error *ngIf="profileForm.controls.email.errors?.email">Email is not in correct format.</span>
+    </ng-container>
+  </div>
+  <div class="mb-6">
+      <label for="mobile_phone" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Phone</label>
+      <input form-control type="tel" formControlName="mobile_phone" placeholder="+xxx xxx xxx"/>
+      <ng-container *ngIf="formSubmitted && profileForm.controls.mobile_phone.touched && profileForm.controls.mobile_phone.invalid">
+        <span form-error *ngIf="profileForm.controls.mobile_phone.errors?.pattern">Wrong format.</span>
+      </ng-container>
+  </div>
+  <div class="mb-6">
+    <label for="customBgColor" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Custom Bg Color</label>
+    <input form-control type="color" formControlName="customBgColor" class="h-11 bg-white"/>
+</div>
+  
+
+  <div class="flex flex-col space-y-6 md:space-y-0 md:flex-row md:space-x-6">
+      <button type="button" (click)="resetForm()" btn>
+        <span>Reset</span>
+      </button>
+
+      <button type="submit" btn-primary>
+        <span>Submit</span>
+      </button>
+  </div>
+</form>
+
+<ng-container [ngSwitch]="submitState">
+  <div *ngSwitchCase="'error'" class="bg-red-100 border-l-4 border-red-500 flex items-center p-4 text-red-700" role="alert">
+    <div>
+      <p class="font-bold text-5xl">Error</p>
+      <p>While submitting form</p>
+    </div>
+    <img src="https://media.giphy.com/media/8L0Pky6C83SzkzU55a/giphy.gif" class="w-28 mx-auto">
+  </div>
+  <div *ngSwitchCase="'success'" class="bg-green-100 border-l-4 border-green-500 flex items-center p-4 text-green-700" role="alert">
+    <div>
+      <p class="font-bold text-5xl">Success</p>
+      <p>Bravo</p>
+    </div>
+    <img src="https://media.giphy.com/media/Tfy1QEkNqQSVYeJcml/giphy.gif" class="w-28 mx-auto">
+  </div>
+</ng-container>

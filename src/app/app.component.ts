@@ -1,11 +1,7 @@
 import { Component, HostBinding, Inject } from '@angular/core';
 import { Router } from '@angular/router';
-import {
-  APP_CONSTANTS,
-  LocalStorageService,
-  IConstants,
-  AuthService
-} from '@core';
+import { APP_CONSTANTS, IConstants } from '@core';
+import { AuthService, LocalStorageService } from '@core/services';
 import { Observable } from 'rxjs';
 import { User } from './core/models';
 

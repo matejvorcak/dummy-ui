@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { IsLoggedInGuard } from '../core/guards/isLoggedIn/is-logged-in.guard';
-import { IsNotLoggedInGuard } from '../core/guards/isNotLoggedIn/is-not-logged-in.guard';
+import { IsLoggedInGuard, IsNotLoggedInGuard } from '@core/guards';
 
 const routes: Routes = [
   {

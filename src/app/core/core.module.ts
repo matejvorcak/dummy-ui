@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { APP_CONSTANTS } from '@core';
 import { CONSTANTS } from './constants';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [],
-  imports: [CommonModule],
+  imports: [HttpClientModule],
   providers: [{ provide: APP_CONSTANTS, useValue: CONSTANTS }]
 })
 export class CoreModule {}

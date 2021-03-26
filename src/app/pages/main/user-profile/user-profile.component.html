@@ -1,0 +1,20 @@
+<p class="text-yellow-600">User Profile Component</p>
+<div [ngSwitch]="dataStatus">
+  <div *ngSwitchCase="'ERROR'" class="bg-red-100 border-l-4 border-red-500 p-4 text-red-700" role="alert">
+    <p class="font-bold text-5xl">Error</p>
+    <p>While loading Foos.</p>
+  </div>
+  
+  <div *ngSwitchCase="'LOADED'" class="bg-green-100 border-l-4 border-green-500 p-4 text-green-700" role="alert">
+    <p class="font-bold text-5xl">Success</p>
+    <p>Foos loaded.</p>
+  </div>
+  <div *ngSwitchCase="'LOADING'" class="bg-yellow-100 border-l-4 border-yellow-500 p-4 text-yellow-700" role="alert">
+    <p class="font-bold text-5xl">Loading</p>
+    <p>Foos.</p>
+  </div>
+</div>
+
+<app-submitted-data></app-submitted-data>
+
+<app-profile-form></app-profile-form>

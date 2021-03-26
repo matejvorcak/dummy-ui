@@ -1,0 +1,5 @@
+:host {
+  display: block;
+  @apply rounded-md border-yellow-400 p-1 border-2 mb-1
+
+}

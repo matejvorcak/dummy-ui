@@ -1,0 +1,5 @@
+<p class="text-yellow-400">Submitted Data Component</p>
+<pre class="whitespace-pre" *ngIf="data$ | async as data">
+  <ng-container *ngFor="let item of data | keyvalue; trackBy:('$index' | trackByProperty) ">
+    {{item.key}}: <{{item.value}}></ng-container>
+</pre>  
